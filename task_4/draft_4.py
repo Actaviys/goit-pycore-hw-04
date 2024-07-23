@@ -17,23 +17,6 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, *args
 
-# add Lisa 34489302048
-def add_contact(args):
-    name, phone = args
-    r = f"'{name}': '{phone}'"
-    # res = {f'{name}{phone}'}
-    return r
-    
-def test_func():
-    print("Test")
-
-
-# change Dima 2232222
-def change_contact(args, contacts):
-    name, phone = args
-    contacts[name] = phone
-    return f"Change contact.\n{name}: {contacts[name]}"    
-
 
 # all contacts
 def out_all_contacts(contacts):
@@ -43,17 +26,33 @@ def out_all_contacts(contacts):
     return s_tr
 
 
-# phone Dima
-def phone_out(args, contacts):
-    p_st = ""
-    phone = ''.join(args) #'+'.join(['1', '2', '3'])
-    for p in contacts:
-        pp = str(p)
-        if pp == phone:
-            p_st = f"{p_st + pp + ": " + contacts[pp]}"
-            return p_st
+# # phone Dima
+# def phone_out(args, contacts):
+#     p_st = ""
+#     phone = ''.join(args) #'+'.join(['1', '2', '3'])
+#     for p in contacts:
+#         pp = str(p)
+#         if pp == phone:
+#             p_st = f"{p_st + pp + ": " + contacts[pp]}"
+#             return p_st
 
 
+
+# # change Dima 2232222
+# def change_contact(args, contacts):
+#     name, phone = args
+#     contacts[name] = phone
+#     return f"Change contact.\n{name}: {contacts[name]}"    
+
+
+#####
+# add Lisa 34489302048
+def add_contact(args):
+    name, phone = args
+    r = f"'{name}': '{phone}'"
+    # res = {f'{name}{phone}'}
+    return r
+#####
     
 
 def main():
@@ -75,25 +74,27 @@ def main():
         
         elif command == "hello":
             print("How can I help you?")
-            
-        elif command == "add":
-            add = add_contact(args)
-            print(add)
-            # contacts.update({add})
         
         elif command == "all":
             print(out_all_contacts(contacts))
         
-        elif command == "phone":
-            print(phone_out(args, contacts))
+        # elif command == "phone":
+        #     print(phone_out(args, contacts))
 
-        elif command == "change":
-            print(change_contact(args, contacts))
+        # elif command == "change":
+        #     print(change_contact(args, contacts))
+        
+        
+        ###
+        elif command == "add":
+            add = add_contact(args)
+            print(add)
+            # contacts.update({add})
+        ###
             
         elif command == "t":
-            print(test_func())
-            
-        
+            print("TEST")
+                
             
         else:
             print("Invalid command.")
