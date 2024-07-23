@@ -14,7 +14,11 @@ contacts = {
         'Dima': '34489302048'
     }
 
-def change_contact(args, contacts):
+# def change_contacts(args, contacts):
+#     name, phone = args
+#     print(name)
+
+def change_cont(args, contacts):
     name = args
     phone = str(contacts)
     phone = ''.join(args) #'+'.join(['1', '2', '3'])
@@ -24,6 +28,12 @@ def change_contact(args, contacts):
             # contacts[pp] += 
             return contacts[pp]
     
+    
+def add_contact(args, contacts):
+    name, phone = args
+    contacts[name] = phone
+    return f"Contact added.\n{name}: {contacts[name]}"
+
 
 # def add_contact(args, contacts):
 #     name, phone = args
@@ -32,9 +42,8 @@ def change_contact(args, contacts):
     
     
     
-names = input("==> ")
-print(change_contact(names, contacts))
-
+# names = input("==> ")
+# print(change_cont(names, contacts))
 
 
 
