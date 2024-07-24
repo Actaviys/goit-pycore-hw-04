@@ -5,11 +5,9 @@ from colorama import Fore, Back, Style
 
 #  task_3@\Files
 console = input(f"{Fore.MAGENTA}Введіть шлях до директорії \n==> {Style.RESET_ALL}")
-# console = "task_3@"  
 
 
-
-def console_decode(console):
+def console_decode(console):#Виводжу вкладені файли і папки які є у введеній дерикторії через форматовані print з допомогою colorama
     try: #Просто загнав весь код в `try` :)
         list_d = os.listdir(console)#Повертаю список файлів в папці
         print(f"\n{Back.BLUE}{console}:{Style.RESET_ALL}")
